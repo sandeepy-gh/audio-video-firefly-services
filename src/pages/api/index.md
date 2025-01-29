@@ -4,4 +4,4 @@ contributors:
   - https://github.com/BaskarMitrah
 ---
 
-<RedoclyAPIBlock src="https://developer.adobe.com/avatar-tts-beta/openapi/openapi.json" />
+<RedoclyAPIBlock src="/audio-video-firefly-services/openapi/openapi.json" />
