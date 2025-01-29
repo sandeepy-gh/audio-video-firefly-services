@@ -13,98 +13,48 @@
 module.exports = {
   pathPrefix: process.env.PATH_PREFIX || '/audio-video-firefly-services/',
   siteMetadata: {
-    versions: [
-      {
-        title: 'v2.0',
-        selected: true
-      },
-      {
-        title: 'v1.4',
-        path: 'https://github.com/AdobeDocs/dev-site'
-      }
-    ],
     pages: [
       {
-        title: 'Cat Analytics',
+        title: 'Overview',
         path: '/'
       },
       {
-        title: 'Guides',
+        title: 'Getting Started',
         path: '/guides/'
       },
       {
-        title: 'API Reference',
-        menu: [
-          {
-            title: 'Cat Reference v2.0',
-            description: 'Cat Reporting API',
-            path: '/api/index.md'
-          },
-          {
-            title: 'Cat Reference v1.4',
-            description: 'Cat API Spec',
-            path: '/api/1.4.md'
-          }
-        ]
+        title: 'API References',
+        path: '/api/'
       },
-      {
-        title: 'Support',
-        path: '/support/'
-      }
     ],
     subPages: [
       {
-        title: 'Get Started',
+        title: 'Getting Started',
         path: '/guides/',
-        pages: [
-          {
-            title: 'Dummy an OAuth Client',
-            path: '/guides/dummy_oauth_client/'
-          },
-          {
-            title: 'Dummy OAuth using POSTMAN',
-            path: '/guides/dummy_using_postman/'
-          }
-        ]
-      },
-      {
-        title: 'Cat Metrics API',
-        path: '/guides/dummy_metrics_api/'
-      },
-      {
-        title: 'Migrating',
-        path: '/guides/migrating/'
-      },
-      {
-        title: 'Overview',
-        path: '/support/',
         header: true,
         pages: [
           {
-            title: 'Help',
-            path: '/support/'
+            title: 'Authentication',
+            path: '/guides/'
+          },
+          // TODO: Editrorial Review By Alex
+          /*
+          {
+            title: 'Getting Started with Avatar',
+            path: '/guides/avatar'
           },
           {
-            title: 'FAQ',
-            path: '/support/FAQ/'
+            title: 'Getting Started with TTS',
+            path: '/guides/tts'
           },
+          */
           {
-            title: 'How to contribute',
-            path: '/support/contribute/'
-          }
-        ]
-      },
-      {
-        title: 'Community',
-        path: '/support/community/',
-        header: true,
-        pages: [
-          {
-            title: 'Information',
-            path: '/support/community/'
-          }
+            title: 'API Usage Notes',
+            path: '/guides/usage'
+          },
         ]
       }
+
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]

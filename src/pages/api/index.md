@@ -1,5 +1,7 @@
 ---
-title: Cat API Spec 2.0
-description: Cat API Spec 2.0
-openAPISpec:  /petstore.json
---- 
+title: Avatar Private Beta Overview
+contributors:
+  - https://github.com/BaskarMitrah
+---
+
+<RedoclyAPIBlock src="https://developer.adobe.com/avatar-tts-beta/openapi/openapi.json" />

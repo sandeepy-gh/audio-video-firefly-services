@@ -1,0 +1,117 @@
+---
+title: API Usage Notes
+contributors:
+  - https://github.com/BaskarMitrah
+---
+
+# API Usage Notes
+
+This doc provides details about using the APIs, including what's currently supported, limitations and workarounds, and the current usage limits.
+
+## Using the Avatar and TTS (Text-to-Speech) APIs
+
+### Understanding limitations and workarounds
+
+These are some known limitations of the these APIs and their workarounds:
+
+- **Gesture mismatch**: Output videos may occasionally feature gesture mismatches.
+- **TTS voice modulation**: The output may have signification modulation in pitch or voice. Regenerating the audio can often resolve this issue.
+- **Limited voice controls**: Currently we do not support voice controls like emphasis, speed or pitch modulation.
+- **Mispronunciation**: The audio output might mispronounce certain uncommon words or proper nouns. This can be addressed by using phonetic spellings.
+
+### Language support
+
+Audio and video generation is supported for the following languages:
+
+- English ```(en-US)```
+- Spanish ```(es-ES)```
+- German ```(de-DE)```
+- French ```(fr-FR)```
+- Portuguese ```(pt-PT)```
+- Italian ```(it-IT)```
+
+Change the ```localeCode``` parameter to get the results in the desired language/accent.
+
+### Input text specifications
+
+**Transcript length**: Up to ```7500 ```characters.
+
+ **Input Medium**: Direct text or ```.txt``` file via a pre-signed URL.
+
+### Input audio specifications (for Avatar API)
+
+**Duration (max)**: 30 mins.
+
+**CODEC**: MPEG, PCM.
+
+**Formats/container**: audio/mp3, audio/mpeg, audio/x-wav, audio/wav, audio/vnd.dlna.adts, audio/aac.
+
+**Input Medium**: Pre-signed URL.
+
+### Background video specifications (for Avatar API)
+
+**Duration (max)**: 30 mins.
+
+**FPS**: 24 fps, 25 fps, 29.97, 30, 50, 59.94, 60.
+
+**Resolution (max)**: Full HD.
+
+**Aspect Ratio**: 1,920*1,080px.
+
+**CODEC**: H.264.
+  
+**Formats/container**: video/mp4, video/mov.
+
+**Input Medium**: Pre-signed URL.
+
+### Background image specifications (for Avatar API)
+
+**Formats**: JPEG,PNG.
+
+**Input Medium**: Pre-signed URL.
+
+**Aspect Ratio**: 1,920*1,080px.
+
+### API render time
+
+<InlineNestedAlert variant="info" iconPosition="right">
+
+   2X the output audio length for TTS API.
+
+   10X the output video length for Avatar API.
+
+ </InlineNestedAlert>
+
+### API parameters
+
+| API                  | Parameter       | Default | All values | Requirement |
+|----------------------|-----------------|---------------|-----------------|--------------------|
+| Text-to-Speech       | Voice ID        | -             | Refer to catalog   | Mandatory          |
+|                      | Output format   | .wav          | .mp3, .wav       | Optional           |
+| Avatar  (audio input) | Actor ID        | -             | Refer to catalog   | Mandatory          |
+|                      | Output format   | .mp4          | .mp4            | Optional           |
+|                      | Background type | -             | "image", "video" | Optional           |
+|                      | Background      | -             | Pre-signed URL  | Optional           |
+| Avatar (text input) | Voice ID        | -             | Refer catalog   | Mandatory          |
+|                      | Actor ID        | -             | Refer to catalog   | Mandatory          |
+|                      | Output format   | .mp4          | .mp4            | Optional           |
+|                      | Background type | -             | "image", "video" | Optional           |
+|                      | Background      | -             | Pre-signed URL  | Optional           |
+
+## Request limits per API
+
+To be sure everyone enjoys peak performance with these APIs, Adobe sets limits on the volume, frequency, and concurrency of API calls. Adobe monitors your API usage and will contact you proactively to resolve any risks to API performance.
+
+These are the current rate limits for API requests:
+
+**Avatar API**: One request per minute and 150 requests per day. Note that each request corresponds to one generation.
+
+**TTS API**: One request per minute.
+
+**Get Result API**: 100 requests per minute.
+
+You may encounter a `HTTP 429 "Too Many Requests"` error if usage exceeds either the per minute or per day limits. We recommend using the `retry-after` header to determine the number of seconds you should wait before trying again.
+
+<InlineAlert variant="warning" slots="text" />
+
+Be aware that these usage limits apply to your entire organization.
