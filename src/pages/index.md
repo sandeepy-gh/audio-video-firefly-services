@@ -21,7 +21,4 @@ These APIs offer automated video and audio creation at scale:
 1. **Avatar API** enables you to create an avatar speaking on video from a provided transcript. You may provide audio or text input files.
 2. **Text-to-Speech (TTS) API** enables you to generate lifelike spoken audio from a provided transcript.
 
-
-
-[Start exploring this API to see what it's all about.](guides/index.md)
-
+[**Start exploring this API to see what it's all about.**](guides/index.md)
