@@ -50,7 +50,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 ## Input text specifications
 
-**Transcript length**: Up to ```7500 ```characters.
+**Transcript length**: Up to ```7500``` characters.
 
  **Input Medium**: Direct text or ```.txt``` file via a pre-signed URL.
 
