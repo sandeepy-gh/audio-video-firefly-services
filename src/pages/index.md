@@ -23,5 +23,5 @@ These APIs offer automated video and audio creation at scale:
 
 
 
-[Start exploring this API to see what it's all about.](guides/index.md)
+[**Start exploring this API to see what it's all about.**](guides/index.md)
 
