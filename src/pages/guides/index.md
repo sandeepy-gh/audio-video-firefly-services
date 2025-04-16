@@ -1,37 +1,224 @@
 ---
-title: Authentication
-description: This is the authentication guide for Adobe Firefly API
+title: Using the Avatar API
+description: Learn how to use the Avatar API to generate avatar videos.
 contributors:
   - https://github.com/BaskarMitrah
+  - https://github.com/aeabreu-hub
 ---
-# Authentication
 
-<InlineAlert slots="text" />
+# Using the Avatar API
 
-Server-to-server authentication credentials let your application's server generate access tokens and make API calls on behalf of your application. This is sometimes referred to as "two-legged OAuth".
+The Avatar API offers automated video creation using a digital avatar speaking from a provided transcript. This guide shows you how to get started using the asynchronous API.
 
-For your application to generate an access token, an end user does not need to sign in or provide consent to your application. Instead, your application can use its credentials (client ID and secrets) to authenticate itself and generate access tokens. Your application can then use these to call Adobe APIs and services on its behalf. 
+## Overview
 
-## Access tokens
+Using the Avatar API you can generate an Avatar video with a text prompt or audio input.
+Options with the endpoint allow you to:
 
-Each access token is valid for 24 hours. To adhere to OAuth best practices, you should generate a new token every 23 hours. 
+- [Select an avatar from a catalog](/images/Avatar-Catalog.pdf) of stock actors.
+- Select a voice from a catalog of stock voices.
+- Use your own voice file to create avatar videos.
+- Set your own image/video as a video background.
 
-Generating access tokens can be accomplished programmatically by sending a POST request to the following endpoint:
+The endpoint returns a response object like the one below. Use the `result_url` from the response to [check the job result](#check-the-status-of-a-job).
 
-```bash
-curl -X POST 'https://ims-na1.adobelogin.com/ims/token/v3' \
--H 'Content-Type: application/x-www-form-urlencoded' \
--d 'grant_type=client_credentials&client_id={<client_id>}&client_secret={<client_secret>}&scope=openid,AdobeID,firefly_enterprise'
+```json
+{
+    "links": {
+        "cancel": {
+            "href": "<cancel URL>"
+        },
+        "result": {
+            "href": "<result URL>"
+        }
+    }
+}
 ```
 
-The required parameters are:
+## Prerequisites
 
-- ```client_id```: The Client ID.
-- ```client_secret```: The Client secret.
-- ```scope```: ```openid,AdobeID,firefly_enterprise```
+[Review the Getting Started page](/getting_started/) for this API for authentication and setup.
 
-Automate your token generation by calling the IMS endpoint above using standard OAuth2 libraries. Using industry-standard libraries is the quickest and most secure way of integrating with OAuth. 
+### API credentials
 
-Be diligent when picking the OAuth 2.0 library that works best for your application. Your teams' projects are likely leveraging OAuth libraries already in order to connect with other APIs. It is recommended to use these libraries to automatically generate tokens when they expire. 
+You'll need:
 
-The token endpoint also returns an expiry date, and the token itself (when decoded) contains the expiry time.
+- ```client_id```
+- ```client_secret```
+
+## Quickstart
+
+Use the commands below to generate an Avatar video.
+
+In the cURL commands, be sure to update:
+
+-  `Authorization` with the bearer token.
+-  `x-api-key` with the Client ID.
+-  `mediaType` the correct input format.
+-  `url` (where applicable) with the generated pre-signed URL.
+-  `avatarId` with the unique ID of the avatar to be used for avatar generation. Users should [refer to the Avatar catalog](/images/Avatar-Catalog.pdf) to choose the appropriate Avatar ID.
+
+### Generate a video from text input
+
+```bash
+curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client ID>' \
+  --data-raw '{
+    "script": {
+        "source": {
+            "text": "<script text>"
+        },
+        "mediaType": "text/plain",
+        "localeCode": "en-US"
+    },
+    "voiceId": "<voice ID>",
+    "avatarId": "<avatar ID>",
+    "output": {
+        "mediaType": "video/mp4"
+    }
+}'
+```
+
+### Generate a video from a text file input
+
+```bash
+curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client_ID>' \
+  --data-raw '{
+    "script": {
+        "source": {
+            "url": "<pre-signed URL of text file>"
+        },
+        "mediaType": "text/plain",
+        "localeCode": "en-US"
+    },
+    "voiceId": "<voice ID>",
+    "avatarId": "<avatar ID>",
+    "output": {
+        "mediaType": "video/mp4"
+    }
+}'
+```
+
+### Generate a video from an audio file input
+
+```bash
+curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client_ID>' \
+  --data-raw '{
+    "audio": {
+        "source": {
+            "url": "<pre-signed URL of input audio>"
+        },
+        "mediaType": "audio/wav",
+        "localeCode": "en-US"
+    },
+    "avatarId": "<avatar ID>",
+    "output": {
+        "mediaType": "video/mp4"
+    }
+}'  
+```
+
+### Use an image or video as a background
+
+Change the background of the Avatar video by providing a pre-signed URL of a video or image to use as a replacement.
+
+<InlineAlert slots="header,text" />
+
+NOTE
+
+[Refer to the Technical Usage notes](/usage/) to understand the supported formats, aspect ratio, etc. for video and image backgrounds.
+
+#### Generate a video from text input with a video background
+
+```bash
+curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client_ID>' \
+  --data-raw '{
+    "script": {
+        "source": {
+            "text": "<script text>"
+        },
+        "mediaType": "text/plain",
+        "localeCode": "en-US"
+    },
+    "voiceId": "<voice ID>",
+    "avatarId": "<avatar ID>",
+    "output": {
+        "mediaType": "video/mp4",
+        "background": {
+            "type": "video",
+            "source": {
+                "url": "<pre-signed URL of background video>"
+            }        
+        }
+    }
+}'  
+```
+
+#### Generate a video from text input with an image background
+
+```bash
+curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client_ID>' \
+  --data-raw '{
+    "script": {
+        "source": {
+            "text": "<script text>"
+        },
+        "mediaType": "text/plain",
+        "localeCode": "en-US"
+    },
+    "voiceId": "<voice ID>",
+    "avatarId": "<avatar ID>",
+    "output": {
+        "mediaType": "video/mp4",
+        "background": {
+            "type": "image",
+            "source": {
+                "url": "<pre-signed URL of background image>"
+            }        
+        }
+    }
+}'  
+```
+
+### Check the status of a job
+
+Use the GET Result API to see the status of a job. In the command below, update:
+
+- `result_url` with the URL returned in the response of the Avatar API call.
+- `Authorization` with the bearer token.
+- `x-api-key` with the Client ID.
+
+```bash
+curl --location '<result URL>' \
+  -H 'Authorization: Bearer <Token>' \
+  -H 'x-api-key: <Client ID>' 
+```
+
+**Sample Avatar API response**
+
+```bash
+{
+    "status": "succeeded",
+    "url": "<pre-signed URL of the result>"
+}
+```
+
+Use the `url` to download the generated video.
+
+### Verify with Content Credentials
+
+Adobe participates in the content authentication initiative for AI-generated assets, addressing concerns around content legitimacy. Register your content by uploading the file at [ContentCredential.org](https://contentcredentials.org/verify).

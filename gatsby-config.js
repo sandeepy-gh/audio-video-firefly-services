@@ -15,46 +15,57 @@ module.exports = {
   siteMetadata: {
     pages: [
       {
-        title: 'Overview',
+        title: 'Firefly Services',
+        path: 'https://developer.adobe.com/firefly-services/docs/guides/'
+      },
+      {
+        title: 'About Audio/Video API',
         path: '/'
       },
       {
         title: 'Getting Started',
+        path: '/getting_started/'
+      },
+      {
+        title: 'Guides',
         path: '/guides/'
       },
       {
-        title: 'API References',
+        title: 'API Reference',
         path: '/api/'
       },
     ],
     subPages: [
       {
         title: 'Getting Started',
-        path: '/guides/',
+        path: '/getting_started/',
         header: true,
         pages: [
           {
             title: 'Authentication',
-            path: '/guides/'
-          },
-          // TODO: Editrorial Review By Alex
-          /*
-          {
-            title: 'Getting Started with Avatar',
-            path: '/guides/avatar'
+            path: '/getting_started/'
           },
           {
-            title: 'Getting Started with TTS',
+            title: 'Technical Usage Notes',
+            path: '/getting_started/usage'
+          }
+        ]
+      },
+      {
+        title: 'Guides',
+        path: '/guides/',
+        header: true,
+        pages: [
+          {
+            title: 'Using the Avatar API',
+            path: '/guides/index.md'
+          },
+          {
+            title: 'Using the TTS API',
             path: '/guides/tts'
-          },
-          */
-          {
-            title: 'API Usage Notes',
-            path: '/guides/usage'
-          },
+          }
         ]
       }
-
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]
