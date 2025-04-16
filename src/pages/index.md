@@ -25,7 +25,7 @@ This resource creates a digital avatar speaking on video from a transcript that'
 
 <DiscoverBlock slots="link, text"/>
 
-[TTS API](guides/segments_api/)
+[TTS API](guides/tts/)
 
 The Text-to-Speech (TTS) API generates lifelike spoken audio from a provided transcript.
 
