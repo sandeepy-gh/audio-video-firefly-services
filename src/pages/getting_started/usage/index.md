@@ -1,25 +1,24 @@
 ---
-title: API Usage Notes
+title: TTS and Avatar API Usage Notes
+description: This doc provides details about using the APIs, including what's currently supported, limitations and workarounds, and the current usage limits.
 contributors:
   - https://github.com/BaskarMitrah
 ---
 
 # API Usage Notes
 
-This doc provides details about using the APIs, including what's currently supported, limitations and workarounds, and the current usage limits.
+This doc provides details about using the Avatar and TTS (Text-to-Speech) APIs, including what's currently supported, limitations and workarounds, and the current usage limits.
 
-## Using the Avatar and TTS (Text-to-Speech) APIs
-
-### Understanding limitations and workarounds
+## Understanding limitations and workarounds
 
 These are some known limitations of the these APIs and their workarounds:
 
 - **Gesture mismatch**: Output videos may occasionally feature gesture mismatches.
 - **TTS voice modulation**: The output may have signification modulation in pitch or voice. Regenerating the audio can often resolve this issue.
-- **Limited voice controls**: Currently we do not support voice controls like emphasis, speed or pitch modulation.
+- **Limited voice controls**: Currently we don't support voice controls like emphasis, speed or pitch modulation.
 - **Mispronunciation**: The audio output might mispronounce certain uncommon words or proper nouns. This can be addressed by using phonetic spellings.
 
-### Language support
+## Language support
 
 Audio and video generation is supported for the following languages:
 
@@ -32,13 +31,15 @@ Audio and video generation is supported for the following languages:
 
 Change the ```localeCode``` parameter to get the results in the desired language/accent.
 
-### Input text specifications
+## Input text specifications
 
 **Transcript length**: Up to ```7500 ```characters.
 
  **Input Medium**: Direct text or ```.txt``` file via a pre-signed URL.
 
-### Input audio specifications (for Avatar API)
+## For Avatar API only
+
+### Avatar input audio specifications
 
 **Duration (max)**: 30 mins.
 
@@ -48,7 +49,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **Input Medium**: Pre-signed URL.
 
-### Background video specifications (for Avatar API)
+### Avatar background video specifications
 
 **Duration (max)**: 30 mins.
 
@@ -64,7 +65,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **Input Medium**: Pre-signed URL.
 
-### Background image specifications (for Avatar API)
+### Avatar background image specifications
 
 **Formats**: JPEG,PNG.
 
@@ -72,17 +73,13 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **Aspect Ratio**: 1,920*1,080px.
 
-### API render time
-
-<InlineNestedAlert variant="info" iconPosition="right">
+## API render time
 
    2X the output audio length for TTS API.
 
    10X the output video length for Avatar API.
 
- </InlineNestedAlert>
-
-### API parameters
+## API parameters
 
 | API                  | Parameter       | Default | All values | Requirement |
 |----------------------|-----------------|---------------|-----------------|--------------------|
@@ -102,6 +99,10 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 To be sure everyone enjoys peak performance with these APIs, Adobe sets limits on the volume, frequency, and concurrency of API calls. Adobe monitors your API usage and will contact you proactively to resolve any risks to API performance.
 
+<InlineAlert variant="warning" slots="text" />
+
+Be aware that these usage limits apply to your entire organization.
+
 These are the current rate limits for API requests:
 
 **Avatar API**: One request per minute and 150 requests per day. Note that each request corresponds to one generation.
@@ -111,7 +112,3 @@ These are the current rate limits for API requests:
 **Get Result API**: 100 requests per minute.
 
 You may encounter a `HTTP 429 "Too Many Requests"` error if usage exceeds either the per minute or per day limits. We recommend using the `retry-after` header to determine the number of seconds you should wait before trying again.
-
-<InlineAlert variant="warning" slots="text" />
-
-Be aware that these usage limits apply to your entire organization.
