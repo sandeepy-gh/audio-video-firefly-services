@@ -15,7 +15,11 @@ module.exports = {
   siteMetadata: {
     pages: [
       {
-        title: 'Overview',
+        title: 'Firefly Services',
+        path: 'https://developer.adobe.com/firefly-services/docs/guides/'
+      },
+      {
+        title: 'About Audio/Video API',
         path: '/'
       },
       {
@@ -27,7 +31,7 @@ module.exports = {
         path: '/guides/'
       },
       {
-        title: 'API References',
+        title: 'API Reference',
         path: '/api/'
       },
     ],
@@ -42,7 +46,7 @@ module.exports = {
             path: '/getting_started/'
           },
           {
-            title: 'API Usage Notes',
+            title: 'Technical Usage Notes',
             path: '/getting_started/usage'
           }
         ]
