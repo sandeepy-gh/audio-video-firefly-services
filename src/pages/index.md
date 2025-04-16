@@ -1,24 +1,21 @@
 ---
-title: Avatar Private Beta Overview
-description: This is the overview page of Avatar
+title: Avatar and TTS API Overview
+description: The overview page for Avatar and TTS API services.
 contributors:
   - https://github.com/BaskarMitrah
-  - https://github.com/AEAbreu-hub
 ---
 
 <Hero slots="heading, text" background="rgb(233, 80, 80)"/>
 
-# Avatar and TTS (Text-to-Speech) API (beta)
+# Avatar and TTS (Text-to-Speech) APIs
 
-Text-to-Speech and avatar resources are now available in private beta.
+Avatar and Text-to-Speech (TTS) APIs create digital clones of real humans for lifelike speaking videos or audio from a transcript.
 
 ## Overview
 
-Avatar and Text-to-Speech (TTS) is a technology for creating digital clones of real humans which can be used to create lifelike speaking videos or audio from a transcript. These resources reduce creation time and cost for professional content production.
+Avatar and Text-to-Speech APIs offer automated video and audio content production at scale:
 
-These APIs offer automated video and audio creation at scale:
+1. **Avatar API** creatse an avatar speaking on video from a provided transcript. You may provide audio or text input files as transcript content for the video.
+2. **Text-to-Speech (TTS) API** generates lifelike spoken audio from a provided transcript.
 
-1. **Avatar API** enables you to create an avatar speaking on video from a provided transcript. You may provide audio or text input files.
-2. **Text-to-Speech (TTS) API** enables you to generate lifelike spoken audio from a provided transcript.
-
-[**Start exploring this API to see what it's all about.**](guides/index.md)
+[Check out the Getting Started Section](/getting_started/) to see what they're all about.
