@@ -20,6 +20,10 @@ module.exports = {
       },
       {
         title: 'Getting Started',
+        path: '/getting_started/'
+      },
+      {
+        title: 'Guides',
         path: '/guides/'
       },
       {
@@ -30,31 +34,34 @@ module.exports = {
     subPages: [
       {
         title: 'Getting Started',
-        path: '/guides/',
+        path: '/getting_started/',
         header: true,
         pages: [
           {
             title: 'Authentication',
-            path: '/guides/'
+            path: '/getting_started/'
           },
-          // TODO: Editrorial Review By Alex
-          /*
-          {
-            title: 'Getting Started with Avatar',
-            path: '/guides/avatar'
-          },
-          {
-            title: 'Getting Started with TTS',
-            path: '/guides/tts'
-          },
-          */
           {
             title: 'API Usage Notes',
-            path: '/guides/usage'
+            path: '/getting_started/usage'
+          }
+        ]
+      },
+      {
+        title: 'Guides',
+        path: '/guides/',
+        header: true,
+        pages: [
+          {
+            title: 'Using the Avatar API',
+            path: '/guides/index.md'
           },
+          {
+            title: 'Using the TTS API',
+            path: '/guides/tts'
+          }
         ]
       }
-
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`]
