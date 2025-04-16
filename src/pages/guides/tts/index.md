@@ -32,6 +32,7 @@ You'll need:
 ## Quickstart
 
 In the cURL command below, be sure to update:
+
 - `Authorization` with the bearer token.
 - `x-api-key` as per the prerequisite.
 - `mediaType` as per input type.
@@ -106,7 +107,6 @@ Use the GET Result API to see the status of a job. In the command below, update:
 - `x-api-key`
 
 The `result_url` is returned in the response of the TTS API call.
-
 
 ```bash
 curl --location '<result_url>' \

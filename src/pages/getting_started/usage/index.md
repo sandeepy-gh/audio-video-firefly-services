@@ -15,7 +15,7 @@ These are some known limitations of the these APIs and their workarounds:
 
 - **Gesture mismatch**: Output videos may occasionally feature gesture mismatches.
 - **TTS voice modulation**: The output may have signification modulation in pitch or voice. Regenerating the audio can often resolve this issue.
-- **Limited voice controls**: Currently we don't support voice controls like emphasis, speed or pitch modulation.
+- **Limited voice controls**: Currently voice controls like emphasis, speed or pitch modulation are not supported.
 - **Mispronunciation**: The audio output might mispronounce certain uncommon words or proper nouns. This can be addressed by using phonetic spellings.
 
 ## Language support
@@ -33,9 +33,9 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 ## Input text specifications
 
-**Transcript length**: Up to ```7500 ```characters.
+**Transcript length**: Up to ```7500``` characters.
 
- **Input Medium**: Direct text or ```.txt``` file via a pre-signed URL.
+ **Input Medium**: Direct text input or ```.txt``` file via a pre-signed URL.
 
 ## For Avatar API only
 

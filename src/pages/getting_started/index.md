@@ -15,7 +15,7 @@ For your application to generate an access token, an end user does not need to s
 
 ## Access tokens
 
-Each access token is valid for 24 hours. To adhere to OAuth best practices, you should generate a new token every 23 hours. 
+Each access token is valid for 24 hours. To adhere to OAuth best practices, you should generate a new token every 23 hours.
 
 Generate access tokens programmatically by sending a POST request:
 
