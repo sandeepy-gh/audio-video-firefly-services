@@ -15,21 +15,21 @@ For your application to generate an access token, an end user does not need to s
 
 ## Access tokens
 
-Each access token is valid for 24 hours. To adhere to OAuth best practices, you should generate a new token every 23 hours.
+Each access token is valid for 24 hours. To adhere to OAuth best practices, you should generate a new token every 23 hours. 
 
 Generate access tokens programmatically by sending a POST request:
 
 ```bash
 curl -X POST 'https://ims-na1.adobelogin.com/ims/token/v3' \
 -H 'Content-Type: application/x-www-form-urlencoded' \
--d 'grant_type=client_credentials&client_id={<client_id>}&client_secret={<client_secret>}&scope=openid,AdobeID,firefly_enterprise'
+-d 'grant_type=client_credentials&client_id={client_id}&client_secret={client_secret}&scope=openid,AdobeID,firefly_api,ff_apis'
 ```
 
 The required parameters are:
 
 - ```client_id```: The Client ID.
 - ```client_secret```: The Client secret.
-- ```scope```: ```openid,AdobeID,firefly_enterprise```
+- ```scope```: ```openid,AdobeID,firefly_api,ff_apis```
 
 Automate your token generation by calling the IMS endpoint above using standard OAuth2 libraries. Using industry-standard libraries is the quickest and most secure way of integrating with OAuth.
 
@@ -58,10 +58,14 @@ There are a few ways to set this up, described below.
 1. Log in to your Frame.io account.
 2. Create a project (for example, ```AdobeApiTesting```).
 3. Open the inspect view of your browser. In Chrome, press f12 and go to the **Network** tab.
-4. Drag and drop the video/audio/image/text file that you want to test in the bucket.
+4. Drag and drop the video/audio/image/text file that you want to test in the project.
 5. Select the file and click **Download**.
 6. In the **Network** tab, you will see a ```GET``` call using a pre-signed URL to download the file.
 7. Copy that URL to use for your API testing.
+
+### Using Frame.io Developer APIs
+
+Refer to [Frame.io API guide](https://developer.frame.io/api/reference/) to create assets and get their pre-signed URL.
 
 ### Use Google's direct link service
 
