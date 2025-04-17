@@ -128,7 +128,7 @@ curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
   --data-raw '{
     "audio": {
         "source": {
-          "url": "<pre-signed URL of input audio>"
+            "url": "<pre-signed URL of input audio>"
         },
         "mediaType": "audio/wav",
         "localeCode": "en-US"
@@ -170,7 +170,7 @@ curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
         "background": {
             "type": "video",
             "source": {
-                "url": "<pre-signed url of background video>"
+                "url": "<pre-signed URL of background video>"
             }
         }
     }
@@ -197,7 +197,7 @@ curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
         "background": {
             "type": "image",
             "source": {
-                "url": "<pre-signed url of background image>"
+                "url": "<pre-signed URL of background image>"
             }
         }
     }
