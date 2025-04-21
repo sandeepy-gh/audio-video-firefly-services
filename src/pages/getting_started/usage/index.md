@@ -93,8 +93,6 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
    10X the output video length for Avatar API.
 
- </InlineNestedAlert>
-
 ## API parameters
 
 | API                   | Parameter       | Default       | All values                               | Requirement |
