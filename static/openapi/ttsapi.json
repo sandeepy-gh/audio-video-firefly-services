@@ -1025,7 +1025,6 @@
           "extendedPropertyMap": {
             "type": "object",
             "description": "This is a field for any additional properties for the avatar."
-
           },
           "thumbnailUrls": {
             "type": "object",
@@ -1073,7 +1072,7 @@
       },
       "SupportedOutputVideoFormat" : {
         "type" : "string",
-        "enum" : [ "video/mp4" ],
+        "enum" : [ "video/mp4", "video/webm" ],
         "description": "The supported video format for background video for Avatar."
       },
       "SupportedBackgroundType" : {
@@ -1179,7 +1178,7 @@
               },
               "mediaType" : {
                 "type" : "string",
-                "enum" : [ "audio/wav", "audio/x-wav", "audio/mp3", "audio/aac" ]
+                "enum" : [ "audio/wav", "audio/x-wav", "audio/aac" ]
               },
               "localeCode" : {
                 "$ref" : "#/components/schemas/SupportedLanguageCode"
@@ -1267,7 +1266,7 @@
       "OutputColor" : {
         "type" : "string",
         "properties" : {
-          "text" : {
+          "color" : {
             "type" : "string",
             "pattern" : "^#[0-9a-fA-F]{6}$",
             "description" : "For color as background of output, it should be six digit hexadecimal value"

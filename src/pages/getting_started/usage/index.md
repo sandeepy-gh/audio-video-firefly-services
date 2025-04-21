@@ -59,7 +59,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **CODEC**: MPEG, PCM.
 
-**Formats/container**: audio/wav, audio/x-wav, audio/mp3, audio/aac.
+**Formats/container**: audio/wav, audio/x-wav, audio/aac.
 
 **Input Medium**: Pre-signed URL.
 
@@ -98,14 +98,14 @@ Change the ```localeCode``` parameter to get the results in the desired language
 | API                   | Parameter       | Default       | All values                               | Requirement |
 |-----------------------|-----------------|---------------|------------------------------------------|-------------|
 | Text-to-Speech        | Voice ID        | -             | Refer to catalog                         | Mandatory   |
-|                       | Output format   | .wav          | .mp3, .wav                               | Optional    |
+|                       | Output format   | .wav          | .wav                                     | Optional    |
 | Avatar  (audio input) | Actor ID        | -             | Refer to catalog                         | Mandatory   |
-|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Output format   | .mp4          | .mp4, .webm                              | Optional    |
 |                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
 |                       | Background      | -             | Pre-signed URL                           | Optional    |
 | Avatar (text input)   | Voice ID        | -             | Refer catalog                            | Mandatory   |
 |                       | Actor ID        | -             | Refer to catalog                         | Mandatory   |
-|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Output format   | .mp4          | .mp4, .webm                              | Optional    |
 |                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
 |                       | Background      | -             | Pre-signed URL                           | Optional    |
 
@@ -119,9 +119,13 @@ Be aware that these usage limits apply to your entire organization.
 
 These are the current rate limits for API requests:
 
-**Avatar API**: One request per minute and 150 requests per day. Note that each request corresponds to one generation.
+**Get Voices API**: 50 requests per minute.
 
-**TTS API**: One request per minute.
+**Get Actors API**: 50 requests per minute.
+
+**Avatar API**: 5 requests per minute.
+
+**TTS API**: 10 requests per minute.
 
 **Get Result API**: 100 requests per minute.
 
