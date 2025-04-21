@@ -6,7 +6,7 @@ contributors:
   - https://github.com/aeabreu-hub
 ---
 
-# Getting Started with Text to Speech API
+# Using the Text to Speech API
 
 The **Text to Speech (TTS)** API address the need for automated speech audio creation at scale. This guide shows you how to get started with using this asynchronous API.
 
@@ -37,24 +37,18 @@ In the cURL command below, be sure to update:
 - `x-api-key` as per the prerequisite.
 - `mediaType` as per input type.
 - `url` with the generated pre-signed URL.
-- `voiceId` specifies the unique ID of the voice to be used for speech generation. Users should [refer to the catalog](/images/Avatar-Catalog.pdf) to choose the appropriate voice ID.
+- `voiceId` specifies the unique ID of the voice to be used for speech generation. Users should [refer to the Voices List API](/api) to choose the appropriate voice ID.
 
-The command returns a response object like the one below. Use the `result_url` from the response to [check the job result](#check-the-status-of-a-job).
+The command returns a response object like the one below. Use the `statusUrl` from the response to [check the job result](#check-the-status-of-a-job).
 
 ```json
 {
-    "links": {
-        "cancel": {
-            "href": "<cancel_url>"
-        },
-        "result": {
-            "href": "<result_url>"
-        }
-    }
-} 
+    "jobId": "986fc222-1118-4242-b326-eb9873e3982f",
+    "statusUrl": "https://audio-video-api.adobe.io/v1/status/{jobID}"
+}
 ```
 
-### Generate using a text prompt
+### Generate a video from plain text prompt
 
 ```bash
 curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
@@ -63,13 +57,31 @@ curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
 -H 'Content-Type: application/json' \
 --data-raw '{
     "script": {
-        "source": {
-            "text": "Your text goes here"
-        },
+        "text": "<script text>",
         "mediaType": "text/plain",
         "localeCode": "en-US"
     },
-    "voiceId": "<voice_ID>",
+    "voiceId": "<voice ID>",
+    "output": {
+        "mediaType": "audio/wav"
+    }
+}'
+```
+
+### Generate a video from SSML text prompt
+
+```bash
+curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
+-H 'Authorization: Bearer <Token>' \
+-H 'x-api-key: <Client_ID>' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+    "script": {
+        "text": "<SSML text>",
+        "mediaType": "application/ssml+xml",
+        "localeCode": "en-US"
+    },
+    "voiceId": "<voice ID>",
     "output": {
         "mediaType": "audio/wav"
     }
@@ -91,7 +103,7 @@ curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
         "mediaType": "text/plain",
         "localeCode": "en-US"
     },
-    "voiceId": "<voice_ID>",
+    "voiceId": "<voice ID>",
     "output": {
         "mediaType": "audio/wav"
     }
@@ -102,14 +114,14 @@ curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
 
 Use the GET Result API to see the status of a job. In the command below, update:
 
-- `result_url`
+- `statusUrl`
 - `Authorization`
 - `x-api-key`
 
-The `result_url` is returned in the response of the TTS API call.
+The `statusUrl` is returned in the response of the TTS API call.
 
 ```bash
-curl --location '<result_url>' \
+curl --location '<statusUrl>' \
   -H 'Authorization: Bearer <Token>' \
   -H 'x-api-key: <Client_ID>' 
 ```
@@ -118,8 +130,11 @@ curl --location '<result_url>' \
 
 ```json
 {
+    "jobId": "986fc222-1118-4242-b326-eb9873e3982f",
     "status": "succeeded",
-    "url": "<pre-signed URL of the result>"
+    "output": {
+        "url": "<pre-signed URL of the result>"
+    }
 }
 ```
 
