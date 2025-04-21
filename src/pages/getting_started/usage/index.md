@@ -22,12 +22,26 @@ These are some known limitations of the these APIs and their workarounds:
 
 Audio and video generation is supported for the following languages:
 
-- English ```(en-US)```
-- Spanish ```(es-ES)```
-- German ```(de-DE)```
-- French ```(fr-FR)```
-- Portuguese ```(pt-PT)```
+- German ```(de-DE)```
+- Danish (Denmark) ```(da-DK)```
+- English (American) ```(en-US)```
+- English (British) ```(en-GB)```
+- English (Indian) ```(en-IN)```
+- Spanish (Spanish) ```(es-ES)```
+- Spanish (Latin America) ```(es-419)```
+- Spanish (Argentina) ```(es-AR)```
+- French (France) ```(fr-FR)```
+- French (Canada) ```(fr-CA)```
+- Hindi (India) ```(hi-IN)```
 - Italian ```(it-IT)```
+- Japanese (Japan) ```(ja-JP)```
+- Korean (South Korea) ```(ko-KR)```
+- Norwegian (Norway) ```(nb-NO)```
+- Dutch (Netherlands) ```(nl-NL)```
+- Portuguese (Brazil) ```(pt-BR)```
+- Portuguese (Portugal) ```(pt-PT)```
+- Swedish (Sweden) ```(sv-SE)```
+- Chinese (Simplified) ```(zh-CN)```
 
 Change the ```localeCode``` parameter to get the results in the desired language/accent.
 
@@ -35,7 +49,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **Transcript length**: Up to ```7500``` characters.
 
- **Input Medium**: Direct text input or ```.txt``` file via a pre-signed URL.
+**Input Medium**: Plain text, SSML (Speech Synthesis Markup Language) text, or ```.txt``` file via a pre-signed URL.
 
 ## For Avatar API only
 
@@ -45,7 +59,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **CODEC**: MPEG, PCM.
 
-**Formats/container**: audio/mp3, audio/mpeg, audio/x-wav, audio/wav, audio/vnd.dlna.adts, audio/aac.
+**Formats/container**: audio/wav, audio/x-wav, audio/mp3, audio/aac.
 
 **Input Medium**: Pre-signed URL.
 
@@ -81,19 +95,19 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 ## API parameters
 
-| API                  | Parameter       | Default | All values | Requirement |
-|----------------------|-----------------|---------------|-----------------|--------------------|
-| Text-to-Speech       | Voice ID        | -             | Refer to catalog   | Mandatory          |
-|                      | Output format   | .wav          | .mp3, .wav       | Optional           |
-| Avatar  (audio input) | Actor ID        | -             | Refer to catalog   | Mandatory          |
-|                      | Output format   | .mp4          | .mp4            | Optional           |
-|                      | Background type | -             | "image", "video" | Optional           |
-|                      | Background      | -             | Pre-signed URL  | Optional           |
-| Avatar (text input) | Voice ID        | -             | Refer catalog   | Mandatory          |
-|                      | Actor ID        | -             | Refer to catalog   | Mandatory          |
-|                      | Output format   | .mp4          | .mp4            | Optional           |
-|                      | Background type | -             | "image", "video" | Optional           |
-|                      | Background      | -             | Pre-signed URL  | Optional           |
+| API                   | Parameter       | Default       | All values                               | Requirement |
+|-----------------------|-----------------|---------------|------------------------------------------|-------------|
+| Text-to-Speech        | Voice ID        | -             | Refer to catalog                         | Mandatory   |
+|                       | Output format   | .wav          | .mp3, .wav                               | Optional    |
+| Avatar  (audio input) | Actor ID        | -             | Refer to catalog                         | Mandatory   |
+|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
+|                       | Background      | -             | Pre-signed URL                           | Optional    |
+| Avatar (text input)   | Voice ID        | -             | Refer catalog                            | Mandatory   |
+|                       | Actor ID        | -             | Refer to catalog                         | Mandatory   |
+|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
+|                       | Background      | -             | Pre-signed URL                           | Optional    |
 
 ## Request limits per API
 
