@@ -68,26 +68,6 @@ curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
 }'
 ```
 
-### Generate a video from SSML text prompt
-
-```bash
-curl --location 'https://audio-video-api.adobe.io/v1/generate-speech' \
--H 'Authorization: Bearer <Token>' \
--H 'x-api-key: <Client_ID>' \
--H 'Content-Type: application/json' \
---data-raw '{
-    "script": {
-        "text": "<SSML text>",
-        "mediaType": "application/ssml+xml",
-        "localeCode": "en-US"
-    },
-    "voiceId": "<voice ID>",
-    "output": {
-        "mediaType": "audio/wav"
-    }
-}'
-```
-
 ### Generate using a text file
 
 ```bash
