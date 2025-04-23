@@ -49,7 +49,7 @@ Change the ```localeCode``` parameter to get the results in the desired language
 
 **Transcript length**: Up to ```7500``` characters.
 
-**Input Medium**: Plain text, SSML (Speech Synthesis Markup Language) text, or ```.txt``` file via a pre-signed URL.
+**Input Medium**: Plain text, or ```.txt``` file via a pre-signed URL.
 
 ## For Avatar API only
 
