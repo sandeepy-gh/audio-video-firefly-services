@@ -74,27 +74,6 @@ curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
 }'
 ```
 
-### Generate a video from SSML text input
-
-```bash
-curl 'https://audio-video-api.adobe.io/v1/generate-avatar' \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer <Token>' \
-  -H 'x-api-key: <Client_ID>' \
-  --data-raw '{
-    "script": {
-        "text": "<SSML script text>",
-        "mediaType": "application/ssml+xml",
-        "localeCode": "en-US"
-    },
-    "voiceId": "<voice ID>",
-    "avatarId": "<avatar ID>",
-    "output": {
-        "mediaType": "video/mp4"
-    }
-}'
-```
-
 ### Generate a video from a text file input
 
 ```bash
