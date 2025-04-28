@@ -96,8 +96,11 @@
                   "$ref": "#/components/schemas/FailedResponse"
                 },
                 "examples": {
-                  "RunTimeErrorInStudio": {
+                  "RunTimeError": {
                     "$ref": "#/components/examples/RunTimeError"
+                  },
+                  "StudioAPIFailedEntitiesErrorResponse": {
+                    "$ref": "#/components/examples/StudioAPIFailedEntitiesErrorResponse"
                   }
                 }
               }
@@ -180,8 +183,11 @@
                   "$ref": "#/components/schemas/FailedResponse"
                 },
                 "examples": {
-                  "RunTimeErrorInStudio": {
+                  "RunTimeError": {
                     "$ref": "#/components/examples/RunTimeError"
+                  },
+                  "StudioAPIFailedEntitiesErrorResponse": {
+                    "$ref": "#/components/examples/StudioAPIFailedEntitiesErrorResponse"
                   }
                 }
               }
@@ -310,9 +316,6 @@
                   "$ref" : "#/components/schemas/FailedResponse"
                 },
                 "examples" : {
-                  "UserBKSFailedErrorExample" : {
-                    "$ref" : "#/components/examples/UserBKSFailedErrorExample"
-                  },
                   "InvalidInputErrorExample" : {
                     "$ref" : "#/components/examples/InvalidInputErrorExample"
                   },
@@ -575,9 +578,6 @@
                   "$ref" : "#/components/schemas/FailedResponse"
                 },
                 "examples" : {
-                  "UserBKSFailedErrorExample" : {
-                    "$ref" : "#/components/examples/UserBKSFailedErrorExample"
-                  },
                   "InvalidInputErrorExample" : {
                     "$ref" : "#/components/examples/InvalidInputErrorExample"
                   },
@@ -850,9 +850,6 @@
                   },
                   "StatusAPIFailedTTSInternalErrorResponse": {
                     "$ref" : "#/components/examples/StatusAPIFailedTTSInternalErrorResponse"
-                  },
-                  "StatusAPIFailedEntitiesErrorResponse": {
-                    "$ref" : "#/components/examples/StatusAPIFailedEntitiesErrorResponse"
                   }
                 }
               }
@@ -1488,13 +1485,14 @@
         }
       },
       "ErrorBodyUnauthorised": {
-        "summary": "Oauth token is not valid",
+        "summary": "Invalid Token",
         "value": {
           "error_code": "401013",
           "message": "Oauth token is not valid"
         }
       },
       "ErrorBodyAccessDenied": {
+        "summary": "Access Denied",
         "value": {
           "error_code": "unauthorized_forbidden",
           "message": "Access denied: You do not have the necessary permissions to access this resourced"
@@ -1571,252 +1569,294 @@
         }
       },
       "UserBKSFailedErrorExample" : {
+        "summary" : "",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Unauthorised authorization request"
         }
       },
       "InvalidInputErrorExample": {
+        "summary" : "Invalid Input",
         "value": {
           "error_code": "validation_error",
           "message": "The request could not be processed due to invalid input"
         }
       },
       "MissingInputFileUrlErrorExample": {
+        "summary" : "Missing Input URL",
         "value": {
           "error_code": "validation_error",
           "message": "Missing input file URL"
         }
       },
       "InvalidInputUrlErrorExample" : {
+        "summary" : "Invalid Input URL",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Invalid input 'url' specified"
         }
       },
       "InputFileFormatValidationErrorExample" : {
+        "summary" : "Invalid Input Format",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Input file format is not supported"
         }
       },
       "MissingScriptErrorExample" : {
+        "summary" : "Missing Input Script",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Script missing in the payload"
         }
       },
       "EmptyTextForScriptErrorExample" : {
+        "summary" : "Empty Input Text",
         "value" : {
           "error_code" : "validation_error",
           "message" : "The provided 'text' is empty"
         }
       },
       "TextLengthExceededForScriptErrorExample": {
+        "summary" : "Input Text Too Long",
         "value": {
           "error_code": "validation_error",
           "message": "Input text has more than 20000 characters"
         }
       },
       "TextLengthSubceededForScriptErrorExample": {
+        "summary" : "Input Text Too Short",
         "value": {
           "error_code":"validation_error",
           "message": "Input text has less than 15 characters"
         }
       },
       "ScriptInvalidASCIIRange" : {
+        "summary" : "Non-ASCII Input Text",
         "value": {
           "error_code":"validation_error",
           "message": "Input contains unsupported characters. Please use only ASCII or extended ASCII."
         }
       },
       "ScriptInvalidTextSupportedRange" : {
+        "summary" : "Invalid Input Text",
         "value": {
           "error_code":"validation_error",
           "message": "Input contains unsupported characters. Please remove any Emojis or Symbols"
         }
       },
       "InvalidOrMissingLocaleCodeForScriptErrorExample" : {
+        "summary" : "Invalid Source Locale",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Invalid source locale code specified"
         }
       },
       "MissingMediaTypeForScriptErrorExample": {
+        "summary" : "Missing Script Mediatype",
         "value": {
           "error_code": "validation_error",
           "message": "Missing script 'mediaType' in the payload"
         }
       },
       "MediatypeIncomatibleForText" : {
+        "summary" : "Invalid Script Mediatype",
         "value": {
           "error_code":"validation_error",
           "message": "Provided text format is not valid for input mediaType"
         }
       },
       "MissingSourceLocaleErrorExample": {
+        "summary" : "Missing Source Locale",
         "value": {
           "error_code": "validation_error",
           "message": "Source locale missing in payload"
         }
       },
       "SourceUrlSourceTextConflictErrorExample": {
+        "summary" : "Both URL and Text",
         "value": {
           "error_code": "validation_error",
           "message": "Both source url and source text is present in the request"
         }
       },
       "UnsupportedVoiceIdErrorExample": {
+        "summary" : "Invalid Voice ID",
         "value": {
           "error_code": "validation_error",
           "message": "The requested 'voiceId' is not supported"
         }
       },
       "MissingVoiceIdErrorExample": {
+        "summary" : "Missing Voice ID",
         "value": {
           "error_code": "validation_error",
           "message": "Missing 'voiceId' in the payload"
         }
       },
       "MissingOutputErrorExample": {
+        "summary" : "Missing Output Config",
         "value": {
           "error_code": "validation_error",
           "message": "Missing 'output' field in the payload"
         }
       },
       "MissingMediaTypeForOutputErrorExample": {
+        "summary" : "Missing Output Mediatype",
         "value": {
           "error_code": "validation_error",
           "message": "Missing output 'mediaType' in payload"
         }
       },
       "InvalidOutputFileFormatErrorExample": {
+        "summary" : "Missing Output Format",
         "value": {
           "error_code": "validation_error",
           "message": "Output file format is not valid"
         }
       },
       "InvalidRequestPayloadErrorExample" : {
+        "summary" : "Invalid TTS Request",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Text to speech service marked this request as invalid"
         }
       },
       "InputScriptAudioConflictErrorExample": {
+        "summary" : "Both Script and Audio",
         "value": {
           "error_code": "validation_error",
           "message": "Must specify either script or audio, not both"
         }
       },
       "InputScriptAudioMissingErrorExample": {
+        "summary" : "None of Script or Audio",
         "value": {
           "error_code": "validation_error",
           "message": "Must specify either script or audio, both cannot be empty"
         }
       },
       "InputScriptAudioMissingOrInvalidErrorExample": {
+        "summary" : "None of Text or URL",
         "value": {
           "error_code": "validation_error",
           "message": "Provide non-empty text in 'script' or a valid URL in 'source'"
         }
       },
       "InvalidOrMissingAudioUrlErrorExample": {
+        "summary" : "Invalid Audio URL",
         "value": {
           "error_code": "validation_error",
           "message": "Invalid or missing 'url' specified in audio"
         }
       },
       "MissingAudioSourceErrorExample": {
+        "summary" : "Missing Audio Source",
         "value": {
           "error_code": "validation_error",
           "message": "Audio source missing in payload"
         }
       },
       "MissingAvatarIdErrorExample": {
+        "summary" : "Missing Avatar ID",
         "value": {
           "error_code": "validation_error",
           "message": "The 'avatarId' property is required"
         }
       },
       "UnsupportedAvatarIdErrorExample": {
+        "summary" : "Invalid Avatar ID",
         "value": {
           "error_code": "validation_error",
           "message": "The requested 'avatarId' is not supported"
         }
       },
       "MissingBackgroundUrlErrorExample": {
+        "summary" : "Missing Background URL",
         "value": {
           "error_code": "validation_error",
           "message": "Background URL must be specified for type 'video' or 'image'"
         }
       },
       "MissingBackgroundTypeErrorExample": {
+        "summary" : "Missing Background Type",
         "value": {
           "error_code": "validation_error",
           "message": "Background type must be set to 'image', 'video', 'color' or 'transparent'"
         }
       },
       "InvalidBackgroundUrlErrorExample": {
+        "summary" : "Invalid Background URL",
         "value": {
           "error_code": "validation_error",
           "message": "Invalid 'url' specified in background"
         }
       },
       "BackgroundSourceColorConflictErrorExample" : {
+        "summary" : "Both Background Source and Color",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Must specify either background source or color, not both"
         }
       },
       "BackgroundSourceColorMissingErrorExample" : {
+        "summary" : "None of Background Source or Color",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Must specify either background source or color, both cannot be empty"
         }
       },
       "InvalidBackgroundColorErrorExample" : {
+        "summary" : "Invalid Background Color",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Invalid 'color' specified in background"
         }
       },
       "MissingBackgroundColorErrorExample" : {
+        "summary" : "Missing Background Color",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Background color must be specified for type 'color'"
         }
       },
       "BackgroundIncompatibleWithFormat" : {
+        "summary" : "Incompatible Background Type",
         "value": {
           "error_code":"validation_error",
           "message": "Transparent background is only supported for 'video/webm' output file format"
         }
       },
       "FormatIncompatibleWithBackground" : {
+        "summary" : "Incompatible Output Format",
         "value": {
           "error_code":"validation_error",
           "message": "The 'video/webm' output format can only be used when the background type is 'transparent'"
         }
       },
       "UnsupportedOutputResolution" :{
+        "summary" : "Invalid Output Resolution",
         "value" : {
           "error_code": "validation_error",
           "message": "Unsupported resolution specified in output. Accepted values are [1920x1080, 3840x2160]"
         }
       },
       "UnsupportedShotTypeErrorExample" : {
+        "summary" : "Invalid Shot Type",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Shot Type is not supported."
         }
       },
       "InvalidSourceUrlErrorExample" : {
+        "summary" : "Invalid Source URL",
         "value" : {
           "error_code" : "validation_error",
           "message" : "Invalid source url"
         }
       },
       "IncorrectVoiceNameErrorExample" : {
+        "summary" : "Invalid Voice Name",
         "value" : {
           "error_code" : "validation_error",
           "message" : "The provided `voice name` is incorrect in the script text"
@@ -1830,36 +1870,42 @@
         }
       },
       "ErrorBodyRateLimited": {
+        "summary" : "Rate Limited",
         "value": {
           "error_code": "rate_limited",
           "message": "Too many requests received"
         }
       },
       "ErrorBodyLegalReasons": {
+        "summary" : "Legal Restrictions",
         "value": {
           "error_code": "unauthorized_legal_reasons",
           "message": "Unauthorized access: Legal restrictions prevent you from accessing this resource."
         }
       },
       "RunTimeError": {
+        "summary" : "Internal Server Error",
         "value": {
           "error_code": "runtime_error",
           "message": "Internal Server Error"
         }
       },
       "TTSRuntimeError": {
+        "summary" : "Error Handling Response",
         "value" : {
           "error_code": "runtime_error",
           "message": "Internal Server Error while receiving or handling response"
         }
       },
       "TTSEntityCreationError": {
+        "summary" : "Error Processing Request",
         "value" : {
           "error_code": "runtime_error",
           "message": "Internal Server Error while creating text to speech request"
         }
       },
       "TTSServiceSubmitError": {
+        "summary" : "Error Submitting Request",
         "value" : {
           "error_code": "runtime_error",
           "message": "Internal Server Error while submitting text to speech request"
@@ -1992,6 +2038,7 @@
         }
       },
       "StatusAPIFailedInputFileDownloadResponse": {
+        "summary" : "Failed Input Download",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2000,6 +2047,7 @@
         }
       },
       "StatusAPIFailedUnsafeScriptResponse": {
+        "summary" : "Unsafe Script",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2008,6 +2056,7 @@
         }
       },
       "StatusAPIFailedBackgroundFileResponse": {
+        "summary" : "Failed Background File Download",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2016,6 +2065,7 @@
         }
       },
       "StatusAPIFailedMediatypeMismatchResponse": {
+        "summary" : "Invalid Input Mediatype",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2024,6 +2074,7 @@
         }
       },
       "StatusAPIFailedUnsupportedBackgroundResponse": {
+        "summary" : "Unsupported Background File Type",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2032,6 +2083,7 @@
         }
       },
       "StatusAPIFailedBackgroundResulutionMismatchResponse": {
+        "summary" : "Unsupported Background Resolution",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2040,6 +2092,7 @@
         }
       },
       "StatusAPIFailedDurationTooLongResponse": {
+        "summary" : "Unsupported Audio Duration",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2048,6 +2101,7 @@
         }
       },
       "StatusAPIFailedCAISigningResponse": {
+        "summary" : "CAI Signing Failed",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2056,6 +2110,7 @@
         }
       },
       "StatusAPIFailedUploadErrorResponse": {
+        "summary" : "Failed Output Upload",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2064,6 +2119,7 @@
         }
       },
       "StatusAPIFailedDownloadErrorResponse": {
+        "summary" : "Failed Input Download",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2072,6 +2128,7 @@
         }
       },
       "StatusAPIFailedTTSErrorResponse": {
+        "summary" : "Error in TTS",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2080,6 +2137,7 @@
         }
       },
       "StatusAPIFailedAvatarErrorResponse": {
+        "summary" : "Error in Avatar",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2088,6 +2146,7 @@
         }
       },
       "StatusAPIFailedLipsyncErrorResponse": {
+        "summary" : "Error in Lipsync",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2096,6 +2155,7 @@
         }
       },
       "StatusAPIFailedFFMpegErrorResponse": {
+        "summary" : "Error in FFMpeg",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2104,6 +2164,7 @@
         }
       },
       "StatusAPIFailedLipsyncPollingErrorResponse": {
+        "summary" : "Error Polling for Lipsync",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2112,6 +2173,7 @@
         }
       },
       "StatusAPIFailedMediaTrimErrorResponse": {
+        "summary" : "Error Processing Avatar Video",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2120,6 +2182,7 @@
         }
       },
       "StatusAPIFailedMediaTrimAlphaErrorResponse": {
+        "summary" : "Error Processing Avatar Alpha Video",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2128,6 +2191,7 @@
         }
       },
       "StatusAPIFailedConfigDownloadResponse": {
+        "summary" : "Error Processing Avatar Config",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2136,6 +2200,7 @@
         }
       },
       "StatusAPIFailedInternalErrorResponse": {
+        "summary" : "Error Processing Response",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2144,6 +2209,7 @@
         }
       },
       "StatusAPIFailedTTSInternalErrorResponse": {
+        "summary" : "Error Getting Status",
         "value": {
           "jobId": "string",
           "status": "failed",
@@ -2151,10 +2217,9 @@
           "message": "Internal Server Error while getting text to speech request status"
         }
       },
-      "StatusAPIFailedEntitiesErrorResponse": {
+      "StudioAPIFailedEntitiesErrorResponse": {
+        "summary" : "Error Fetching Entities",
         "value": {
-          "jobId": "string",
-          "status": "failed",
           "error_code":"runtime_error",
           "message": "Error while fetching available entities"
         }
