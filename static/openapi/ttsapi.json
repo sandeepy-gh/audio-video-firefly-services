@@ -52,7 +52,7 @@
                 },
                 "examples": {
                   "ErrorBodyUnauthorized": {
-                    "$ref": "#/components/examples/ErrorBodyUnauthorised"
+                    "$ref": "#/components/examples/ErrorBodyUnauthorized"
                   }
                 }
               }
@@ -142,7 +142,7 @@
                 },
                 "examples": {
                   "ErrorBodyUnauthorized": {
-                    "$ref": "#/components/examples/ErrorBodyUnauthorised"
+                    "$ref": "#/components/examples/ErrorBodyUnauthorized"
                   }
                 }
               }
@@ -266,7 +266,7 @@
                 },
                 "examples": {
                   "UnauthorizedAccessError": {
-                    "$ref": "#/components/examples/ErrorBodyUnauthorised"
+                    "$ref": "#/components/examples/ErrorBodyUnauthorized"
                   },
                   "ErrorBodyAccessDenied": {
                     "$ref": "#/components/examples/ErrorBodyAccessDenied"
@@ -346,8 +346,8 @@
                   "TextLengthExceededForScriptErrorExample": {
                     "$ref": "#/components/examples/TextLengthExceededForScriptErrorExample"
                   },
-                  "TextLengthSubceededForScriptErrorExample": {
-                    "$ref": "#/components/examples/TextLengthSubceededForScriptErrorExample"
+                  "TextLengthTooShortForScriptErrorExample": {
+                    "$ref": "#/components/examples/TextLengthTooShortForScriptErrorExample"
                   },
                   "ScriptInvalidASCIIRange": {
                     "$ref": "#/components/examples/ScriptInvalidASCIIRange"
@@ -531,7 +531,7 @@
                 },
                 "examples": {
                   "UnauthorizedAccessError": {
-                    "$ref": "#/components/examples/ErrorBodyUnauthorised"
+                    "$ref": "#/components/examples/ErrorBodyUnauthorized"
                   },
                   "ErrorBodyAccessDenied": {
                     "$ref": "#/components/examples/ErrorBodyAccessDenied"
@@ -611,8 +611,8 @@
                   "TextLengthExceededForScriptErrorExample": {
                     "$ref": "#/components/examples/TextLengthExceededForScriptErrorExample"
                   },
-                  "TextLengthSubceededForScriptErrorExample": {
-                    "$ref": "#/components/examples/TextLengthSubceededForScriptErrorExample"
+                  "TextLengthTooShortForScriptErrorExample": {
+                    "$ref": "#/components/examples/TextLengthTooShortForScriptErrorExample"
                   },
                   "ScriptInvalidASCIIRange": {
                     "$ref": "#/components/examples/ScriptInvalidASCIIRange"
@@ -874,8 +874,8 @@
                   "$ref": "#/components/schemas/FailedResponse"
                 },
                 "examples": {
-                  "ErrorBodyUnauthorised": {
-                    "$ref": "#/components/examples/ErrorBodyUnauthorised"
+                  "ErrorBodyUnauthorized": {
+                    "$ref": "#/components/examples/ErrorBodyUnauthorized"
                   }
                 }
               }
@@ -1604,7 +1604,7 @@
           "message": "Invalid request. Please check the input data."
         }
       },
-      "ErrorBodyUnauthorised": {
+      "ErrorBodyUnauthorized": {
         "summary": "Invalid Token",
         "value": {
           "error_code": "401013",
@@ -1751,7 +1751,7 @@
           "message": "Input text has more than 20000 characters"
         }
       },
-      "TextLengthSubceededForScriptErrorExample": {
+      "TextLengthTooShortForScriptErrorExample": {
         "summary": "Input Text Too Short",
         "value": {
           "error_code": "validation_error",
