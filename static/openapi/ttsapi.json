@@ -97,7 +97,7 @@
                 },
                 "examples": {
                   "RunTimeErrorInStudio": {
-                    "$ref": "#/components/examples/RunTimeErrorInStudio"
+                    "$ref": "#/components/examples/RunTimeError"
                   }
                 }
               }
@@ -181,7 +181,7 @@
                 },
                 "examples": {
                   "RunTimeErrorInStudio": {
-                    "$ref": "#/components/examples/RunTimeErrorInStudio"
+                    "$ref": "#/components/examples/RunTimeError"
                   }
                 }
               }
@@ -375,6 +375,12 @@
                   },
                   "InvalidRequestPayloadErrorExample" : {
                     "$ref" : "#/components/examples/InvalidRequestPayloadErrorExample"
+                  },
+                  "InvalidSourceUrlErrorExample" : {
+                    "$ref" : "#/components/examples/InvalidSourceUrlErrorExample"
+                  },
+                  "IncorrectVoiceNameErrorExample" : {
+                    "$ref" : "#/components/examples/IncorrectVoiceNameErrorExample"
                   }
                 }
               }
@@ -688,6 +694,12 @@
                   },
                   "UnsupportedShotTypeErrorExample": {
                     "$ref" : "#/components/examples/UnsupportedShotTypeErrorExample"
+                  },
+                  "InvalidSourceUrlErrorExample" : {
+                    "$ref" : "#/components/examples/InvalidSourceUrlErrorExample"
+                  },
+                  "IncorrectVoiceNameErrorExample" : {
+                    "$ref" : "#/components/examples/IncorrectVoiceNameErrorExample"
                   }
                 }
               }
@@ -778,6 +790,69 @@
                   },
                   "StatusAPISuccessRequestResponse" : {
                     "$ref" : "#/components/examples/StatusApiSuccessRequestResponse"
+                  },
+                  "StatusAPIFailedInputFileDownloadResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedInputFileDownloadResponse"
+                  },
+                  "StatusAPIFailedUnsafeScriptResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedUnsafeScriptResponse"
+                  },
+                  "StatusAPIFailedBackgroundFileResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedBackgroundFileResponse"
+                  },
+                  "StatusAPIFailedMediatypeMismatchResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedMediatypeMismatchResponse"
+                  },
+                  "StatusAPIFailedUnsupportedBackgroundResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedUnsupportedBackgroundResponse"
+                  },
+                  "StatusAPIFailedBackgroundResulutionMismatchResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedBackgroundResulutionMismatchResponse"
+                  },
+                  "StatusAPIFailedDurationTooLongResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedDurationTooLongResponse"
+                  },
+                  "StatusAPIFailedCAISigningResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedCAISigningResponse"
+                  },
+                  "StatusAPIFailedUploadErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedUploadErrorResponse"
+                  },
+                  "StatusAPIFailedDownloadErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedDownloadErrorResponse"
+                  },
+                  "StatusAPIFailedTTSErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedTTSErrorResponse"
+                  },
+                  "StatusAPIFailedAvatarErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedAvatarErrorResponse"
+                  },
+                  "StatusAPIFailedLipsyncErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedLipsyncErrorResponse"
+                  },
+                  "StatusAPIFailedFFMpegErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedFFMpegErrorResponse"
+                  },
+                  "StatusAPIFailedLipsyncPollingErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedLipsyncPollingErrorResponse"
+                  },
+                  "StatusAPIFailedMediaTrimErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedMediaTrimErrorResponse"
+                  },
+                  "StatusAPIFailedMediaTrimAlphaErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedMediaTrimAlphaErrorResponse"
+                  },
+                  "StatusAPIFailedConfigDownloadResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedConfigDownloadResponse"
+                  },
+                  "StatusAPIFailedInternalErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedInternalErrorResponse"
+                  },
+                  "StatusAPIFailedTTSInternalErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedTTSInternalErrorResponse"
+                  },
+                  "StatusAPIFailedEntitiesErrorResponse": {
+                    "$ref" : "#/components/examples/StatusAPIFailedEntitiesErrorResponse"
                   }
                 }
               }
@@ -791,8 +866,8 @@
                   "$ref" : "#/components/schemas/FailedResponse"
                 },
                 "examples" : {
-                  "UnauthorizedAccessError" : {
-                    "$ref" : "#/components/examples/UnauthorizedAccessError"
+                  "ErrorBodyUnauthorised" : {
+                    "$ref" : "#/components/examples/ErrorBodyUnauthorised"
                   }
                 }
               }
@@ -823,45 +898,6 @@
                 "examples" : {
                   "ErrorBodyResourceNotFound" : {
                     "$ref": "#/components/examples/ErrorBodyResourceNotFound"
-                  },
-                  "UnknownJobId" : {
-                    "$ref" : "#/components/examples/UnknownJobId"
-                  }
-                }
-              }
-            }
-          },
-          "422" : {
-            "description" : "Unprocessable Entity.",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/FailedResponse"
-                },
-                "examples" : {
-                  "UserBKSFailedErrorExample" : {
-                    "$ref" : "#/components/examples/UserBKSFailedErrorExample"
-                  },
-                  "ErrorDownloadingFileFromURLErrorExample" : {
-                    "$ref" : "#/components/examples/ErrorDownloadingFileFromURLErrorExample"
-                  },
-                  "BackgroundVideoShouldHaveAudioErrorExample" : {
-                    "$ref" : "#/components/examples/BackgroundVideoShouldHaveAudioErrorExample"
-                  },
-                  "DurationMoreThanSupportedErrorExample" : {
-                    "$ref" : "#/components/examples/DurationMoreThanSupportedErrorExample"
-                  },
-                  "BackgroundAssetResolutionErrorExample" : {
-                    "$ref" : "#/components/examples/BackgroundAssetResolutionErrorExample"
-                  },
-                  "UnsupportedFileTypeForVideoBackgroundErrorExample" : {
-                    "$ref" : "#/components/examples/UnsupportedFileTypeForVideoBackgroundErrorExample"
-                  },
-                  "IncorrectBackgroundUrlErrorExample" : {
-                    "$ref" : "#/components/examples/IncorrectBackgroundUrlErrorExample"
-                  },
-                  "ScriptPromptUnsafe": {
-                    "$ref": "#/components/examples/ScriptPromptUnsafe"
                   }
                 }
               }
@@ -890,41 +926,8 @@
                   "$ref" : "#/components/schemas/FailedResponse"
                 },
                 "examples" : {
-                  "TTSStatusError" : {
-                    "$ref" : "#/components/examples/TTSStatusError"
-                  },
-                  "RunTimeErrorInAvatar" : {
-                    "$ref" : "#/components/examples/RunTimeErrorInAvatarExample"
-                  },
-                  "ValidationFailureInLipsyncPipeline" : {
-                    "$ref" : "#/components/examples/ValidationFailureInLipsyncPipelineExample"
-                  },
-                  "FailedInFFmpegWorker" : {
-                    "$ref" : "#/components/examples/FailedInFFmpegWorkerExample"
-                  },
-                  "FailedWhilePollingForLipsync" : {
-                    "$ref" : "#/components/examples/FailedWhilePollingForLipsyncExample"
-                  },
-                  "ErrorWhileTrimmingAvatarVideo" : {
-                    "$ref" : "#/components/examples/ErrorWhileTrimmingAvatarVideoExample"
-                  },
-                  "ErrorWhileTrimmingAvatarAlphaVideo" : {
-                    "$ref" : "#/components/examples/ErrorWhileTrimmingAvatarAlphaVideoExample"
-                  },
-                  "ErrorWhileDownloadingActorConfigFileFromS3" : {
-                    "$ref" : "#/components/examples/ErrorWhileDownloadingActorConfigFileFromS3Example"
-                  },
-                  "CAISigningFailed" : {
-                    "$ref" : "#/components/examples/CAISigningFailed"
-                  },
-                  "UnableToUploadOutput" : {
-                    "$ref" : "#/components/examples/UnableToUploadOutput"
-                  },
-                  "RunTimeErrorInTTS" : {
-                    "$ref" : "#/components/examples/RunTimeErrorInTTS"
-                  },
-                  "UnableToDownloadStockMedia" : {
-                    "$ref" : "#/components/examples/UnableToDownloadStockMedia"
+                  "RunTimeError": {
+                    "$ref" : "#/components/examples/RunTimeError"
                   }
                 }
               }
@@ -1328,7 +1331,14 @@
           "$ref" : "#/components/schemas/StatusAPIInprogressResponse"
         }, {
           "$ref" : "#/components/schemas/StatusAPICompletedResponse"
+        }, {
+          "$ref" : "#/components/schemas/StatusAPIFailedResponse"
         } ]
+      },
+      "StatusAPIResponseStatus" : {
+        "type" : "string",
+        "enum" : [ "pending", "running", "failed", "succeeded" ],
+        "description" : "Status of the job."
       },
       "StatusAPIInprogressResponse" : {
         "type" : "object",
@@ -1337,7 +1347,7 @@
             "type" : "string"
           },
           "status" : {
-            "type" : "string"
+            "$ref" : "#/components/schemas/StatusAPIResponseStatus"
           }
         }
       },
@@ -1348,7 +1358,7 @@
             "type" : "string"
           },
           "status" : {
-            "type" : "string"
+            "$ref" : "#/components/schemas/StatusAPIResponseStatus"
           },
           "output" : {
             "type" : "object",
@@ -1357,6 +1367,23 @@
                 "type" : "string"
               }
             }
+          }
+        }
+      },
+      "StatusAPIFailedResponse" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "$ref" : "#/components/schemas/StatusAPIResponseStatus"
+          },
+          "jobId": {
+            "type" : "string"
+          },
+          "error_code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
           }
         }
       },
@@ -1675,7 +1702,6 @@
           "message" : "Text to speech service marked this request as invalid"
         }
       },
-      
       "InputScriptAudioConflictErrorExample": {
         "value": {
           "error_code": "validation_error",
@@ -1784,6 +1810,18 @@
           "message" : "Shot Type is not supported."
         }
       },
+      "InvalidSourceUrlErrorExample" : {
+        "value" : {
+          "error_code" : "validation_error",
+          "message" : "Invalid source url"
+        }
+      },
+      "IncorrectVoiceNameErrorExample" : {
+        "value" : {
+          "error_code" : "validation_error",
+          "message" : "The provided `voice name` is incorrect in the script text"
+        }
+      },
       "ErrorBodyTooManyRequests" : {
         "summary" : "Too many requests",
         "value" : {
@@ -1803,7 +1841,7 @@
           "message": "Unauthorized access: Legal restrictions prevent you from accessing this resource."
         }
       },
-      "RunTimeErrorInStudio": {
+      "RunTimeError": {
         "value": {
           "error_code": "runtime_error",
           "message": "Internal Server Error"
@@ -1825,23 +1863,6 @@
         "value" : {
           "error_code": "runtime_error",
           "message": "Internal Server Error while submitting text to speech request"
-        }
-      },
-      "StatusApiInProgressRequestResponse" : {
-        "summary" : "Inprogress response with job details",
-        "value" : {
-          "jobId" : "string",
-          "status" : "string"
-        }
-      },
-      "StatusApiSuccessRequestResponse" : {
-        "summary" : "Success response with job details",
-        "value" : {
-          "jobId" : "string",
-          "status" : "string",
-          "output" : {
-            "url" : "string"
-          }
         }
       },
       "PlainTextInputForAvatarGeneration" : {
@@ -1953,111 +1974,190 @@
           }
         }
       },
-      
-      "ScriptPromptUnsafe": {
+      "StatusApiInProgressRequestResponse" : {
+        "summary" : "Inprogress response with job details",
+        "value" : {
+          "jobId" : "string",
+          "status" : "running"
+        }
+      },
+      "StatusApiSuccessRequestResponse" : {
+        "summary" : "Success response with job details",
+        "value" : {
+          "jobId" : "string",
+          "status" : "succeeded",
+          "output" : {
+            "url" : "string"
+          }
+        }
+      },
+      "StatusAPIFailedInputFileDownloadResponse": {
         "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"resource_not_found",
+          "message": "Failed to download input file"
+        }
+      },
+      "StatusAPIFailedUnsafeScriptResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
           "error_code":"validation_error",
           "message": "The provided prompt is considered unsafe and it cannot be used to generate content"
         }
       },
-      "ErrorDownloadingFileFromURLErrorExample" : {
-        "value" : {
-          "error_code" : "validation_error",
-          "message" : "Failed to download input file"
+      "StatusAPIFailedBackgroundFileResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"validation_error",
+          "message": "Error while downloading media format file from Background URL"
         }
       },
-      "IncorrectBackgroundUrlErrorExample" : {
-        "value" : {
-          "error_code" : "validation_error",
-          "message" : "Error while downloading file from Background URL"
+      "StatusAPIFailedMediatypeMismatchResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"validation_error",
+          "message": "Provided input mediaType should match the type of source media"
         }
       },
-      "UnsupportedFileTypeForVideoBackgroundErrorExample" : {
-        "value" : {
-          "error_code" : "validation_error",
-          "message" : "Unsupported file type for background"
+      "StatusAPIFailedUnsupportedBackgroundResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"validation_error",
+          "message": "Unsupported file type for background"
         }
       },
-      "DurationMoreThanSupportedErrorExample" : {
-        "value" : {
-          "error_code" : "validation_error",
-          "message" : "Audio duration should be less than 30 mins"
+      "StatusAPIFailedBackgroundResulutionMismatchResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"validation_error",
+          "message": "Background asset resolution should match output background resolution (with default value 1920x1080)"
         }
       },
-      "RunTimeErrorInAvatarExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Run time error in avatar"
+      "StatusAPIFailedDurationTooLongResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"validation_error",
+          "message": "Audio duration should be less than 30 mins"
         }
       },
-      "ValidationFailureInLipsyncPipelineExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Validation failure in Lipsync Pipeline"
+      "StatusAPIFailedCAISigningResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "CAI Signing Failed"
         }
       },
-      "FailedInFFmpegWorkerExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Failed in FFmpeg worker"
+      "StatusAPIFailedUploadErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Unable to upload the output"
         }
       },
-      "FailedWhilePollingForLipsyncExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Failed while polling for Lipsync"
+      "StatusAPIFailedDownloadErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Unable to download stock media"
         }
       },
-      "ErrorWhileTrimmingAvatarVideoExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Error while triming avatar video"
+      "StatusAPIFailedTTSErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Run time error in tts"
         }
       },
-      "ErrorWhileTrimmingAvatarAlphaVideoExample" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Error while triming avatar alpha video"
+      "StatusAPIFailedAvatarErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Run time error in avatar"
         }
       },
-      "ErrorWhileDownloadingActorConfigFileFromS3Example" : {
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Error while downloading actor config file"
+      "StatusAPIFailedLipsyncErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Validation failure in Lipsync Pipeline"
         }
       },
-      "CAISigningFailed" : {
-        "summary" : "Example of a CAI signing failure",
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "CAI Signing Failed"
+      "StatusAPIFailedFFMpegErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Failed in FFmpeg worker"
         }
       },
-      "UnableToUploadOutput" : {
-        "summary" : "Example of an upload failure for output",
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Unable to upload the output"
+      "StatusAPIFailedLipsyncPollingErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Failed while polling for Lipsync"
         }
       },
-      "RunTimeErrorInTTS" : {
-        "summary" : "Example of a runtime error in TTS",
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Run time error in tts"
+      "StatusAPIFailedMediaTrimErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Error while triming avatar video"
         }
       },
-      "UnableToDownloadStockMedia" : {
-        "summary" : "Example of a failure to download stock media",
-        "value" : {
-          "error_code" : "runtime_error",
-          "message" : "Unable to download stock media"
+      "StatusAPIFailedMediaTrimAlphaErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Error while triming avatar alpha video"
         }
       },
-      "TTSStatusError": {
-        "value" : {
-          "error_code": "runtime_error",
-          "message": "Internal Server Error while getting text to speech request status"}
+      "StatusAPIFailedConfigDownloadResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Error while downloading actor config file"
+        }
+      },
+      "StatusAPIFailedInternalErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Internal Server Error while receiving or handling response"
+        }
+      },
+      "StatusAPIFailedTTSInternalErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Internal Server Error while getting text to speech request status"
+        }
+      },
+      "StatusAPIFailedEntitiesErrorResponse": {
+        "value": {
+          "jobId": "string",
+          "status": "failed",
+          "error_code":"runtime_error",
+          "message": "Error while fetching available entities"
+        }
       }
     }
   }
