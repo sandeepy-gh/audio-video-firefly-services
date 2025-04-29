@@ -695,11 +695,8 @@
                   "MissingBackgroundColorErrorExample": {
                     "$ref": "#/components/examples/MissingBackgroundColorErrorExample"
                   },
-                  "BackgroundIncompatibleWithFormat": {
-                    "$ref": "#/components/examples/BackgroundIncompatibleWithFormat"
-                  },
-                  "FormatIncompatibleWithBackground": {
-                    "$ref": "#/components/examples/FormatIncompatibleWithBackground"
+                  "BackgroundInvalidFormat": {
+                    "$ref": "#/components/examples/BackgroundInvalidFormat"
                   },
                   "UnsupportedOutputResolution": {
                     "$ref": "#/components/examples/UnsupportedOutputResolution"
@@ -1164,8 +1161,7 @@
       "SupportedOutputVideoFormat": {
         "type": "string",
         "enum": [
-          "video/mp4",
-          "video/webm"
+          "video/mp4"
         ],
         "description": "The supported video format for background video for Avatar."
       },
@@ -1174,8 +1170,7 @@
         "enum": [
           "color",
           "video",
-          "image",
-          "transparent"
+          "image"
         ],
         "description": "Supported background type for output Avatar video."
       },
@@ -1836,7 +1831,7 @@
         }
       },
       "InvalidOutputFileFormatErrorExample": {
-        "summary": "Missing Output Format",
+        "summary": "Invalid Output Format",
         "value": {
           "error_code": "validation_error",
           "message": "Output file format is not valid"
@@ -1909,7 +1904,7 @@
         "summary": "Missing Background Type",
         "value": {
           "error_code": "validation_error",
-          "message": "Background type must be set to 'image', 'video', 'color' or 'transparent'"
+          "message": "Background type must be set to 'image', 'video', or 'color'"
         }
       },
       "InvalidBackgroundUrlErrorExample": {
@@ -1945,6 +1940,13 @@
         "value": {
           "error_code": "validation_error",
           "message": "Background color must be specified for type 'color'"
+        }
+      },
+      "BackgroundInvalidFormat": {
+        "summary": "Invalid Background Type",
+        "value": {
+          "error_code": "validation_error",
+          "message": "Transparent background is not supported"
         }
       },
       "BackgroundIncompatibleWithFormat": {
