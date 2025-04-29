@@ -19,8 +19,6 @@ Audio/Video APIs offer automated audio content production at scale:
 
 ### Explore our APIs
 
-<DiscoverBlock slots="link, text"/>
-
 [TTS API](guides/)
 
 The Text-to-Speech (TTS) API generates lifelike spoken audio from a provided transcript.
