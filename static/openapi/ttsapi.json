@@ -368,7 +368,7 @@
     "/status/{jobId}": {
       "get": {
         "summary": "Get the status of a job",
-        "description": "Provides the status and result of an asynchronous TTS job. <br></br> Use this endpoint for status and results.",
+        "description": "Provides the status and result of an asynchronous TTS job.",
         "operationId": "status",
         "parameters": [
           {
