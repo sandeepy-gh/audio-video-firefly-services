@@ -100,13 +100,13 @@ Change the ```localeCode``` parameter to get the results in the desired language
 | Text-to-Speech        | Voice ID        | -             | Refer to catalog                         | Mandatory   |
 |                       | Output format   | .wav          | .wav                                     | Optional    |
 | Avatar  (audio input) | Actor ID        | -             | Refer to catalog                         | Mandatory   |
-|                       | Output format   | .mp4          | .mp4, .webm                              | Optional    |
-|                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
+|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Background type | -             | "image", "video", "color"                | Optional    |
 |                       | Background      | -             | Pre-signed URL                           | Optional    |
 | Avatar (text input)   | Voice ID        | -             | Refer catalog                            | Mandatory   |
 |                       | Actor ID        | -             | Refer to catalog                         | Mandatory   |
-|                       | Output format   | .mp4          | .mp4, .webm                              | Optional    |
-|                       | Background type | -             | "image", "video", "color", "transparent" | Optional    |
+|                       | Output format   | .mp4          | .mp4                                     | Optional    |
+|                       | Background type | -             | "image", "video", "color"                | Optional    |
 |                       | Background      | -             | Pre-signed URL                           | Optional    |
 
 ## Request limits per API
